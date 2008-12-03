@@ -3,13 +3,13 @@ require 'rubygems'
 desc 'Sync from production to the local cache'
 task :sync_from_production => [:setup] do
   puts "Syncing files from #{CONF['production_bucket']} to #{CACHE}..."
-  `#{S3SYNC} -r --make-dirs #{CONF['production_bucket']}: #{CACHE}`
+  `#{S3SYNC} -r --make-dirs --delete #{CONF['production_bucket']}: #{CACHE}`
 end
 
 desc 'Sync from the local cache to staging'
 task :sync_to_staging => [:setup] do
   puts "Syncing files from #{CACHE} to #{CONF['staging_bucket']}..."
-  `#{S3SYNC} -r --make-dirs #{CACHE}/ #{CONF['staging_bucket']}:`
+  `#{S3SYNC} -r --make-dirs --delete #{CACHE}/ #{CONF['staging_bucket']}:`
 end
 
 desc 'Sync from production to staging through the local cache'
