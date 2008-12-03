@@ -1,2 +1,7 @@
 aws_access_key_id: 11111111111111111111111
 aws_secret_access_key: 22222222222222222222
+app_name: changeme
+production_bucket: <app>-production
+staging_bucket: <app>-staging
+archive_bucket: <app>-archive
+keep_archives: 10
