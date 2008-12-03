@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
-require 's3_awesomeness_config'
+require 's3_awesomeness_config' unless defined?(CONF)
 
-`#{S3SYNC} -r --progress --debug --verbose --make-dirs s3sync-production: #{CACHE}`
+puts "Syncing files from #{CONF['production_bucket']} to #{CACHE}..."
+`#{S3SYNC} -r --make-dirs #{CONF['production_bucket']}: #{CACHE}`

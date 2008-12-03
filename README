@@ -1,0 +1,7 @@
+This set of scripts will sync from a production s3 bucket to the local cache/ directory and sync those files back up to a staging s3 bucket.
+
+It will also upload snapshots of the cache directory to an archive s3 bucket.
+
+* copy s3_awesomeness_config.yml.example to s3_awesomeness_config.yml
+* change values in the config file to match your environment.
+* enjoy!
