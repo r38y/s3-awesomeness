@@ -9,7 +9,7 @@ end
 desc 'Sync from the local cache to staging'
 task :sync_to_staging => [:setup] do
   puts "Syncing files from #{CACHE} to #{CONF['staging_bucket']}..."
-  `#{S3SYNC} -r --make-dirs #{CACHE}/ #{CONF['staging_bucket']}:`
+  `#{S3SYNC} -r -p --make-dirs #{CACHE}/ #{CONF['staging_bucket']}:`
 end
 
 desc 'Sync from production to staging through the local cache'
